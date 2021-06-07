@@ -28,7 +28,7 @@ export const listProducts =
     try {
       dispatsh({ type: PRODUCT_LIST_REQUEST });
       const { data } = await axios.get(
-        `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+        `https://proshopapp9.herokuapp.com/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
       );
 
       dispatsh({
@@ -49,7 +49,7 @@ export const listProducts =
 export const listProductDetails = (id) => async (dispatsh) => {
   try {
     dispatsh({ type: PRODUCT_DETAILS_REQUEST });
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(`https://proshopapp9.herokuapp.com/api/products/${id}`);
 
     dispatsh({
       type: PRODUCT_DETAILS_SUCCESS,
